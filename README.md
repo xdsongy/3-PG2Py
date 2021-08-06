@@ -4,6 +4,7 @@
 usage: python main.py -m <running mode> -a <end age the simulation> 
   
 Arguments:
+  
 -m: running mode and could be one of ['r', 'spatial', 'VB', 'FAST', 'EnKF'], in which ‘r’ means single plot simulation, ‘spatial’ means the spatial simulation, ‘VB’ means the variance-based GSA, ‘FAST’ means the FAST GSA, and ‘EnKF’ means the state-parameter estimation using ensemble Kalman Filter.
   
 -a: end age of the simulation.
