@@ -317,7 +317,7 @@ class water_module_class():
     #
     def fnRainInterception(self, L, Rain, e0):
         
-        # Compute daily rainfall interception by a canopy of leaf area index L
+        # Compute rainfall interception by a canopy of leaf area index L
         if self.site.rainIntensity == 0:
             e = 0
         else:
