@@ -283,14 +283,14 @@ class water_module_class():
 
         # forest rainfall interception
         e0 = self.fnPenman(self.site.fRadInt, self.site.fcVPD, self.site.DayLength, self.site.gAc, 100000)
-        y = self.fnDailyRainInterception(self.site.fLAI + self.site.uLAI, tRain / rEvents, e0)
+        y = self.fnRainInterception(self.site.fLAI + self.site.uLAI, tRain / rEvents, e0)
         
         self.site.fRainInt = rEvents * self.site.treeCover * y
         
         # pasture rainfall interception
         y = 0
         e0 = self.fnPenman(self.site.pcRadInt, self.site.pcVPD, self.site.DayLength, self.site.gAc, 100000)
-        y = self.fnDailyRainInterception(self.site.pLAI, tRain / rEvents, e0)
+        y = self.fnRainInterception(self.site.pLAI, tRain / rEvents, e0)
         self.site.pRainInt = rEvents * (1 - self.site.treeCover) * y
 
 
@@ -315,7 +315,7 @@ class water_module_class():
     #
     # Modelling rainfall interception by canopy
     #
-    def fnDailyRainInterception(self, L, Rain, e0):
+    def fnRainInterception(self, L, Rain, e0):
         
         # Compute daily rainfall interception by a canopy of leaf area index L
         if self.site.rainIntensity == 0:
